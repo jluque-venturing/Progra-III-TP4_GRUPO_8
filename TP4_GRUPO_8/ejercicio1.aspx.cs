@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,6 +18,16 @@ namespace TP4_GRUPO_8
                 PonerSeleccionar(ddlLocalidadInicio);
                 PonerSeleccionar(ddlProvinciaFinal);
                 PonerSeleccionar(ddlLocalidadFinal);
+
+                DatosViajes datos = new DatosViajes();
+
+                DataTable dt = datos.TraerProvincias();
+
+                ddlProvinciaInicio.DataSource = dt;
+                ddlProvinciaInicio.DataTextField = "NombreProvincia";
+                ddlProvinciaInicio.DataValueField = "IdProvincia";
+                ddlProvinciaInicio.DataBind();
+
             }
         }
 

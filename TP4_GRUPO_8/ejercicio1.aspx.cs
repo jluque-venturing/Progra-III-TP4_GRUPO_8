@@ -13,8 +13,16 @@ namespace TP4_GRUPO_8
         {
             if (!IsPostBack)
             {
-
+                PonerSeleccionar(ddlProvinciaInicio);
+                PonerSeleccionar(ddlLocalidadInicio);
+                PonerSeleccionar(ddlProvinciaFinal);
+                PonerSeleccionar(ddlLocalidadFinal);
             }
+        }
+
+        void PonerSeleccionar(DropDownList ddl)
+        {
+            ddl.Items.Add(new ListItem("--Seleccionar--", ""));
         }
     }
 }

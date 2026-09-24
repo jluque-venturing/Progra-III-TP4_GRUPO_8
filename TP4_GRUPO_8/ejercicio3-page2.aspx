@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ejercicio3-page1.aspx.cs" Inherits="TP4_GRUPO_8.ejercicio3_page1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ejercicio3-page2.aspx.cs" Inherits="TP4_GRUPO_8.ejercicio3_page2" %>
 
 <!DOCTYPE html>
 
@@ -11,10 +11,21 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 43px;
+            width: 10px;
         }
         .auto-style3 {
-            width: 151px;
+            width: 10px;
+            height: 3px;
+        }
+        .auto-style4 {
+            height: 3px;
+        }
+        .auto-style5 {
+            height: 3px;
+            width: 203px;
+        }
+        .auto-style6 {
+            width: 203px;
         }
     </style>
 </head>
@@ -23,39 +34,39 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">
-                        <asp:Label ID="Label1" runat="server" Text="Seleccionar Tema:"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:DropDownList ID="ddlTemas" runat="server" Width="219px">
-                        </asp:DropDownList>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">
-                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Ver libros</asp:LinkButton>
+                    <td class="auto-style6">
+                        <h3><b>Listado de libros:</b></h3>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>

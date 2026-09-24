@@ -73,6 +73,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatosLibreria.cs" />
     <Compile Include="ejercicio2.aspx.cs">
       <DependentUpon>ejercicio2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,7 +14,12 @@ namespace TP4_GRUPO_8
         {
             if (!IsPostBack)
             {
+                DatosLibreria datos = new DatosLibreria();
 
+                ddlTemas.DataSource = datos.TraerTemas();
+                ddlTemas.DataTextField = "Tema";
+                ddlTemas.DataValueField = "IdTema";
+                ddlTemas.DataBind();
             }
         }
     }

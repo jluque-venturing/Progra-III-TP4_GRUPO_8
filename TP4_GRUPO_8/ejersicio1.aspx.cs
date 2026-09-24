@@ -7,11 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace TP4_GRUPO_8
 {
-    public partial class ejersicio11 : System.Web.UI.Page
+    public partial class ejersicio1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+            }
         }
     }
 }

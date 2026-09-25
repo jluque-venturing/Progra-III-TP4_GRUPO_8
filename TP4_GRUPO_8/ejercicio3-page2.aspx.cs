@@ -13,6 +13,11 @@ namespace TP4_GRUPO_8
         {
             string idTema = Request.QueryString["idTema"];
             lblIdTema.Text = idTema;
+
+            DatosLibreria datos = new DatosLibreria();
+
+            grdLibros.DataSource = datos.TraerLibrosPorTema(Convert.ToInt32(idTema));
+            grdLibros.DataBind();
         }
     }
 }

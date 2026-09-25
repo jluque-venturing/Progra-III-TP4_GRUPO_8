@@ -52,7 +52,10 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style6">
+                        <asp:GridView ID="grdLibros" runat="server">
+                        </asp:GridView>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

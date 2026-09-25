@@ -29,5 +29,26 @@ namespace TP4_GRUPO_8
 
             return tabla;
         }
+        public DataTable TraerLibrosPorTema(int idTema)
+        {
+            DataTable tabla = new DataTable();
+
+            using (SqlConnection conexion = new SqlConnection(rutaLibreriaSQL))
+            {
+                string consulta = "SELECT * FROM Libros WHERE IdTema = @idTema";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@idTema", idTema);
+
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                    {
+                        adaptador.Fill(tabla);
+                    }
+                }
+            }
+
+            return tabla;
+        }
     }
 }

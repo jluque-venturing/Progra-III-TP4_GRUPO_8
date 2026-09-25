@@ -94,7 +94,11 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style3">
+                        <asp:GridView ID="grdProductos" runat="server">
+
+                        </asp:GridView>
+                    </td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

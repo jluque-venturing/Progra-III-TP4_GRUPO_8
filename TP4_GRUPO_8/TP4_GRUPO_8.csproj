@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatosLibreria.cs" />
+    <Compile Include="DatosNeptuno.cs" />
     <Compile Include="DatosViajes.cs" />
     <Compile Include="ejercicio2.aspx.cs">
       <DependentUpon>ejercicio2.aspx</DependentUpon>

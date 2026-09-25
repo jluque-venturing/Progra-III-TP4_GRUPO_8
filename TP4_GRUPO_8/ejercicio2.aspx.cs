@@ -15,6 +15,7 @@ namespace TP4_GRUPO_8
             {
                 CargarOperadores();
                 LimpiarFiltros();
+                CargarGrilla();
             }
         }
 
@@ -35,6 +36,13 @@ namespace TP4_GRUPO_8
             txtIdProducto.Text = string.Empty;
             ddlOpProducto.SelectedIndex = 0;
             ddlOpCategoria.SelectedIndex = 0;
+        }
+        void CargarGrilla()
+        {
+            DatosNeptuno datos = new DatosNeptuno();
+
+            grdProductos.DataSource = datos.TraerProductos();
+            grdProductos.DataBind();
         }
     }
 }

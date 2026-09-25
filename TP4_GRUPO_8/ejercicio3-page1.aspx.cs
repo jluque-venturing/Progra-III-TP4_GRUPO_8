@@ -25,7 +25,7 @@ namespace TP4_GRUPO_8
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            Server.Transfer("ejercicio3-page2.aspx");
+            Response.Redirect("ejercicio3-page2.aspx?idTema=" + ddlTemas.SelectedValue);
         }
     }
 }

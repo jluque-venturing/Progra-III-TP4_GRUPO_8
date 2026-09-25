@@ -44,6 +44,7 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style6">
                         <h3><b>Listado de libros:</b></h3>
+                        <asp:Label ID="lblIdTema" runat="server"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

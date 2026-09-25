@@ -21,7 +21,7 @@ namespace TP4_GRUPO_8
 
                 SqlDataAdapter adaptador = new SqlDataAdapter(comando);
 
-                adaptador.Fill(dt);S
+                adaptador.Fill(dt);
             }
 
             return dt;

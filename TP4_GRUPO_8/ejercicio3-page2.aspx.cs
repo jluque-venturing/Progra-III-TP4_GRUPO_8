@@ -11,7 +11,8 @@ namespace TP4_GRUPO_8
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string idTema = Request.QueryString["idTema"];
+            lblIdTema.Text = idTema;
         }
     }
 }

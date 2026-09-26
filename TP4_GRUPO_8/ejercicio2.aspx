@@ -95,7 +95,15 @@
                     <td>&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:GridView ID="grdProductos" runat="server">
+                        <asp:GridView ID="grdProductos" runat="server" AutoGenerateColumns="False">
+                            <Columns>
+                                <asp:BoundField DataField="IdProducto" HeaderText="IdProducto" />
+                                <asp:BoundField DataField="NombreProducto" HeaderText="NombreProducto" />
+                                <asp:BoundField DataField="IdCategoría" HeaderText="IdCategoría" />
+                                <asp:BoundField DataField="CantidadPorUnidad" HeaderText="CantidadPorUnidad" />
+                                <asp:BoundField DataField="PrecioUnidad" HeaderText="PrecioUnidad" />
+                            </Columns>
+                            <HeaderStyle Font-Bold="True" />
 
                         </asp:GridView>
                     </td>

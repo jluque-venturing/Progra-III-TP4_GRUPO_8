@@ -54,7 +54,7 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style6">
                         <asp:GridView ID="grdLibros" runat="server" AutoGenerateColumns="False">
-                            <AlternatingRowStyle Font-Bold="True" />
+                            
                             <Columns>
                                 <asp:BoundField DataField="IdLibro" HeaderText="IdLibro" />
                                 <asp:BoundField DataField="IdTema" HeaderText="IdTema" />

@@ -39,6 +39,18 @@ namespace TP4_GRUPO_8
             return Consultar(consulta, null);
         }
 
+        public DataTable TraerProvinciasExcepto(int idProvincia)
+        {
+            string consulta = "SELECT * FROM Provincias WHERE IdProvincia <> @id";
+
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@id", idProvincia)
+            };
+
+            return Consultar(consulta, parametros);
+        }
+
         public DataTable TraerLocalidades(int idProvincia)
         {
             string consulta = "SELECT * FROM Localidades WHERE IdProvincia = @IdProvincia";

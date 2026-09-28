@@ -36,6 +36,7 @@ namespace TP4_GRUPO_8
             ddl.Items.Add(new ListItem("--Seleccionar--", ""));
         }
 
+        
         protected void ddlProvinciaInicio_SelectedIndexChanged(object sender, EventArgs e)
         {
             DatosViajes datos = new DatosViajes();
@@ -48,6 +49,14 @@ namespace TP4_GRUPO_8
             ddlLocalidadInicio.DataTextField = "NombreLocalidad";
             ddlLocalidadInicio.DataValueField = "IdLocalidad";
             ddlLocalidadInicio.DataBind();
+
+            DataTable dtProvincias = datos.TraerProvinciasExcepto(idProvincia);
+
+            ddlProvinciaFinal.DataSource = dtProvincias;
+            ddlProvinciaFinal.DataTextField = "NombreProvincia";
+            ddlProvinciaFinal.DataValueField = "IdProvincia";
+            ddlProvinciaFinal.DataBind();
         }
+
     }
 }

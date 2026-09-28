@@ -38,5 +38,17 @@ namespace TP4_GRUPO_8
 
             return Consultar(consulta, null);
         }
+
+        public DataTable TraerLocalidades(int idProvincia)
+        {
+            string consulta = "SELECT * FROM Localidades WHERE IdProvincia = @IdProvincia";
+
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@IdProvincia", idProvincia)
+            };
+
+            return Consultar(consulta, parametros);
+        }
     }
 }

@@ -46,17 +46,31 @@ namespace TP4_GRUPO_8
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
-        { 
-            if (txtIdProducto.Text == "" || int.Parse(txtIdProducto.Text) <= 0)
+        {
+            int idProducto = 0;
+            int idCategoria = 0;
+
+            if (txtIdProducto.Text != "")
             {
-                return;    
+                idProducto = int.Parse(txtIdProducto.Text);
             }
-            int idProducto = idProducto = int.Parse(txtIdProducto.Text);
-            string operador = ddlOpProducto.SelectedValue;
+
+            if (txtIdCategoria.Text != "")
+            {
+                idCategoria = int.Parse(txtIdCategoria.Text);
+            }
+
+            string operadorProducto = ddlOpProducto.SelectedValue;
+            string operadorCategoria = ddlOpCategoria.SelectedValue;
 
             DatosNeptuno datos = new DatosNeptuno();
 
-            grdProductos.DataSource = datos.TraerProductosFiltrados(operador, idProducto);
+            grdProductos.DataSource = datos.TraerProductosFiltrados(
+                operadorProducto,
+                idProducto,
+                operadorCategoria,
+                idCategoria);
+
             grdProductos.DataBind();
         }
     }

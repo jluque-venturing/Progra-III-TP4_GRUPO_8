@@ -77,7 +77,9 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style6">
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="ejercicio3-page1.aspx">Consultar otro tema</asp:HyperLink>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

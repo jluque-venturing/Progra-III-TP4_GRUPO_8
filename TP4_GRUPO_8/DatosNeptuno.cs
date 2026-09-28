@@ -26,5 +26,25 @@ namespace TP4_GRUPO_8
 
             return dt;
         }
+
+        public DataTable TraerProductosFiltrados(string operadorProducto, int idProducto)
+        {
+            DataTable dt = new DataTable();
+
+            string consulta = "SELECT * FROM Productos WHERE IdProducto " + operadorProducto + " @idProducto";
+
+            using (SqlConnection conexion = new SqlConnection(rutaNeptunoSQL))
+            {
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+
+                comando.Parameters.AddWithValue("@idProducto", idProducto);
+
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+
+                adaptador.Fill(dt);
+            }
+
+            return dt;
+        }
     }
 }

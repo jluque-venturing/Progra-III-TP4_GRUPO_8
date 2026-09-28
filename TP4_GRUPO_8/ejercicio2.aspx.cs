@@ -44,5 +44,20 @@ namespace TP4_GRUPO_8
             grdProductos.DataSource = datos.TraerProductos();
             grdProductos.DataBind();
         }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        { 
+            if (txtIdProducto.Text == "" || int.Parse(txtIdProducto.Text) <= 0)
+            {
+                return;    
+            }
+            int idProducto = idProducto = int.Parse(txtIdProducto.Text);
+            string operador = ddlOpProducto.SelectedValue;
+
+            DatosNeptuno datos = new DatosNeptuno();
+
+            grdProductos.DataSource = datos.TraerProductosFiltrados(operador, idProducto);
+            grdProductos.DataBind();
+        }
     }
 }

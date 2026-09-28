@@ -22,6 +22,42 @@
         .auto-style4 {
             width: 542px;
         }
+        .auto-style5 {
+            width: 96px;
+        }
+        .auto-style6 {
+            width: 105px;
+        }
+        .auto-style7 {
+            height: 70px;
+        }
+        .auto-style8 {
+            width: 126px;
+            height: 70px;
+        }
+        .auto-style9 {
+            width: 206px;
+            height: 70px;
+        }
+        .auto-style10 {
+            width: 542px;
+            height: 70px;
+        }
+        .auto-style11 {
+            height: 13px;
+        }
+        .auto-style12 {
+            width: 126px;
+            height: 13px;
+        }
+        .auto-style13 {
+            width: 206px;
+            height: 13px;
+        }
+        .auto-style14 {
+            width: 542px;
+            height: 13px;
+        }
     </style>
 </head>
 <body>
@@ -30,8 +66,8 @@
             <table class="auto-style1">
                 <tr>
                     <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -43,15 +79,15 @@
 
                 <tr>
                     <td>&nbsp;</td>
-                    <td class="auto-style2">
-                        <asp:Label ID="Label1" runat="server" Text="ID Producto"></asp:Label>
+                    <td class="auto-style6">
+                        <asp:Label ID="Label1" runat="server" Text="ID Producto" Font-Bold="True"></asp:Label>
                     </td>
-                    <td class="auto-style3">
-                        <asp:DropDownList ID="ddlOpProducto" runat="server" Height="18px" Width="148px">
+                    <td class="auto-style5">
+                        <asp:DropDownList ID="ddlOpProducto" runat="server" Height="18px" Width="90px">
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="txtIdProducto" runat="server" Width="509px"></asp:TextBox>
+                        <asp:TextBox ID="txtIdProducto" runat="server" Width="70px" TextMode="Number"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -63,14 +99,16 @@
 
                 <tr>
                     <td>&nbsp;</td>
-                    <td class="auto-style2">
-                        <asp:Label ID="Label2" runat="server" Text="Categoría"></asp:Label>
+                    <td class="auto-style6">
+                        <asp:Label ID="Label2" runat="server" Text="Categoría" Font-Bold="True"></asp:Label>
                     </td>
-                    <td class="auto-style3">
-                        <asp:DropDownList ID="ddlOpCategoria" runat="server" Height="18px" Width="148px">
+                    <td class="auto-style5">
+                        <asp:DropDownList ID="ddlOpCategoria" runat="server" Height="18px" Width="90px">
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style4">
+                        <asp:TextBox ID="txtIdCategoria" runat="server" Width="70px" TextMode="Number"></asp:TextBox>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -78,17 +116,34 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style9">&nbsp;<asp:Button ID="btnFiltrar" runat="server" Font-Bold="True" OnClick="btnFiltrar_Click" Text="Filtrar" Width="79px" />
+&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnQuitarFiltro" runat="server" Font-Bold="True" Text="Quitar filtro" Width="140px" />
+                    </td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style7"></td>
+                </tr>
 
                 <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style11"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style13">
+                    </td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style11"></td>
+                    <td class="auto-style11"></td>
+                    <td class="auto-style11"></td>
+                    <td class="auto-style11"></td>
+                    <td class="auto-style11"></td>
                 </tr>
 
                 <tr>
@@ -107,18 +162,6 @@
 
                         </asp:GridView>
                     </td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

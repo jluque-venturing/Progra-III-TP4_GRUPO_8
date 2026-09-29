@@ -62,9 +62,9 @@ namespace TP4_GRUPO_8
         {
             DatosViajes datos = new DatosViajes();
 
-            int idProvincia = int.Parse(ddlProvinciaFinal.SelectedValue);
+            int idProvinciaFinal = int.Parse(ddlProvinciaFinal.SelectedValue);
 
-            DataTable dt = datos.TraerLocalidades(idProvincia);
+            DataTable dt = datos.TraerLocalidades(idProvinciaFinal);
 
             ddlLocalidadFinal.DataSource = dt;
             ddlLocalidadFinal.DataTextField = "NombreLocalidad";

@@ -58,5 +58,18 @@ namespace TP4_GRUPO_8
             ddlProvinciaFinal.DataBind();
         }
 
+        protected void ddlProvinciaFinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DatosViajes datos = new DatosViajes();
+
+            int idProvincia = int.Parse(ddlProvinciaFinal.SelectedValue);
+
+            DataTable dt = datos.TraerLocalidades(idProvincia);
+
+            ddlLocalidadFinal.DataSource = dt;
+            ddlLocalidadFinal.DataTextField = "NombreLocalidad";
+            ddlLocalidadFinal.DataValueField = "IdLocalidad";
+            ddlLocalidadFinal.DataBind();
+        }
     }
 }

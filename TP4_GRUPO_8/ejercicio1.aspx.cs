@@ -39,37 +39,57 @@ namespace TP4_GRUPO_8
         
         protected void ddlProvinciaInicio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DatosViajes datos = new DatosViajes();
+            ddlLocalidadInicio.Items.Clear();
+            ddlProvinciaFinal.Items.Clear();
+            ddlLocalidadFinal.Items.Clear();
 
-            int idProvincia = int.Parse(ddlProvinciaInicio.SelectedValue);
 
-            DataTable dt = datos.TraerLocalidades(idProvincia);
+            if (ddlProvinciaInicio.SelectedValue != "")
+            {
+                DatosViajes datos = new DatosViajes();
+                int idProvinciaInicio = int.Parse(ddlProvinciaInicio.SelectedValue);
 
-            ddlLocalidadInicio.DataSource = dt;
-            ddlLocalidadInicio.DataTextField = "NombreLocalidad";
-            ddlLocalidadInicio.DataValueField = "IdLocalidad";
-            ddlLocalidadInicio.DataBind();
+                DataTable dtInicio = datos.TraerLocalidades(idProvinciaInicio);
+                ddlLocalidadInicio.DataSource = dtInicio;
+                ddlLocalidadInicio.DataTextField = "NombreLocalidad";
+                ddlLocalidadInicio.DataValueField = "IdLocalidad";
+                ddlLocalidadInicio.DataBind();
 
-            DataTable dtProvincias = datos.TraerProvinciasExcepto(idProvincia);
+                DataTable dtProvincias = datos.TraerProvinciasExcepto(idProvinciaInicio);
+                ddlProvinciaFinal.DataSource = dtProvincias;
+                ddlProvinciaFinal.DataTextField = "NombreProvincia";
+                ddlProvinciaFinal.DataValueField = "IdProvincia";
+                ddlProvinciaFinal.DataBind();
+            }
 
-            ddlProvinciaFinal.DataSource = dtProvincias;
-            ddlProvinciaFinal.DataTextField = "NombreProvincia";
-            ddlProvinciaFinal.DataValueField = "IdProvincia";
-            ddlProvinciaFinal.DataBind();
+
+            PonerSeleccionar(ddlLocalidadInicio);
+            PonerSeleccionar(ddlProvinciaFinal);
+            PonerSeleccionar(ddlLocalidadFinal);
         }
 
         protected void ddlProvinciaFinal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DatosViajes datos = new DatosViajes();
 
-            int idProvinciaFinal = int.Parse(ddlProvinciaFinal.SelectedValue);
+            ddlLocalidadFinal.Items.Clear();
 
-            DataTable dt = datos.TraerLocalidades(idProvinciaFinal);
+            if (ddlProvinciaFinal.SelectedValue != "")
+            {
+                DatosViajes datos = new DatosViajes();
 
-            ddlLocalidadFinal.DataSource = dt;
-            ddlLocalidadFinal.DataTextField = "NombreLocalidad";
-            ddlLocalidadFinal.DataValueField = "IdLocalidad";
-            ddlLocalidadFinal.DataBind();
+
+                int idProvinciaFinal = int.Parse(ddlProvinciaFinal.SelectedValue);
+
+                DataTable dtFinal = datos.TraerLocalidades(idProvinciaFinal);
+
+                ddlLocalidadFinal.DataSource = dtFinal;
+                ddlLocalidadFinal.DataTextField = "NombreLocalidad";
+                ddlLocalidadFinal.DataValueField = "IdLocalidad";
+                ddlLocalidadFinal.DataBind();
+            }
+
+
+            PonerSeleccionar(ddlLocalidadFinal);
         }
     }
 }

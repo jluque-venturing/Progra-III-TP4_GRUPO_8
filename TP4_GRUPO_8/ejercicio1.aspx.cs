@@ -36,7 +36,7 @@ namespace TP4_GRUPO_8
             ddl.Items.Add(new ListItem("--Seleccionar--", ""));
         }
 
-        
+
         protected void ddlProvinciaInicio_SelectedIndexChanged(object sender, EventArgs e)
         {
             ddlLocalidadInicio.Items.Clear();
@@ -60,14 +60,17 @@ namespace TP4_GRUPO_8
                 ddlProvinciaFinal.DataTextField = "NombreProvincia";
                 ddlProvinciaFinal.DataValueField = "IdProvincia";
                 ddlProvinciaFinal.DataBind();
+
+                PonerSeleccionar(ddlLocalidadFinal);
             }
+            else
+            {
 
-
-            PonerSeleccionar(ddlLocalidadInicio);
-            PonerSeleccionar(ddlProvinciaFinal);
-            PonerSeleccionar(ddlLocalidadFinal);
+                PonerSeleccionar(ddlLocalidadInicio);
+                PonerSeleccionar(ddlProvinciaFinal);
+                PonerSeleccionar(ddlLocalidadFinal);
+            }
         }
-
         protected void ddlProvinciaFinal_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -87,9 +90,10 @@ namespace TP4_GRUPO_8
                 ddlLocalidadFinal.DataValueField = "IdLocalidad";
                 ddlLocalidadFinal.DataBind();
             }
-
-
-            PonerSeleccionar(ddlLocalidadFinal);
+            else
+            {
+                PonerSeleccionar(ddlLocalidadFinal);
+            }
         }
     }
 }

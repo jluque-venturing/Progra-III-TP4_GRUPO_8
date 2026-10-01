@@ -74,7 +74,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td class="auto-style2" colspan="2">
-                    <h2 style="width: 302px"><u>DESTINO INICIO</u></h2>
+                    <h2 style="width: 302px"><u>DESTINO FINAL</u></h2>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

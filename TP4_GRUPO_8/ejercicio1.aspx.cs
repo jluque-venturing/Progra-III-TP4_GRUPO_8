@@ -14,10 +14,6 @@ namespace TP4_GRUPO_8
         {
             if (!IsPostBack)
             {
-                PonerSeleccionar(ddlProvinciaInicio);
-                PonerSeleccionar(ddlLocalidadInicio);
-                PonerSeleccionar(ddlProvinciaFinal);
-                PonerSeleccionar(ddlLocalidadFinal);
 
                 DatosViajes datos = new DatosViajes();
 
@@ -28,6 +24,10 @@ namespace TP4_GRUPO_8
                 ddlProvinciaInicio.DataValueField = "IdProvincia";
                 ddlProvinciaInicio.DataBind();
 
+                PonerSeleccionar(ddlProvinciaInicio);
+                PonerSeleccionar(ddlLocalidadInicio);
+                PonerSeleccionar(ddlProvinciaFinal);
+                PonerSeleccionar(ddlLocalidadFinal);
             }
         }
 
@@ -61,6 +61,7 @@ namespace TP4_GRUPO_8
                 ddlProvinciaFinal.DataValueField = "IdProvincia";
                 ddlProvinciaFinal.DataBind();
 
+                PonerSeleccionar(ddlProvinciaFinal);
                 PonerSeleccionar(ddlLocalidadFinal);
             }
             else
@@ -89,6 +90,7 @@ namespace TP4_GRUPO_8
                 ddlLocalidadFinal.DataTextField = "NombreLocalidad";
                 ddlLocalidadFinal.DataValueField = "IdLocalidad";
                 ddlLocalidadFinal.DataBind();
+
             }
             else
             {

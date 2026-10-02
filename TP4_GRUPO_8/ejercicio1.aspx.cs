@@ -12,6 +12,7 @@ namespace TP4_GRUPO_8
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
 
@@ -96,6 +97,23 @@ namespace TP4_GRUPO_8
             {
                 PonerSeleccionar(ddlLocalidadFinal);
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
+ 
+                if (!Page.IsValid) return;
+
+        
+                string locInicio = ddlLocalidadInicio.SelectedItem.Text;
+                string provInicio = ddlProvinciaInicio.SelectedItem.Text;
+                string locFinal = ddlLocalidadFinal.SelectedItem.Text;
+                string provFinal = ddlProvinciaFinal.SelectedItem.Text;
+
+
+            lblviaje.Text = "Viaje de " + locInicio + " (" + provInicio + ") a " + locFinal + " (" + provFinal + ")";
+            
         }
     }
 }

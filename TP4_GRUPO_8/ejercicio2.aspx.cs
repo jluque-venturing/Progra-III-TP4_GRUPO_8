@@ -72,6 +72,7 @@ namespace TP4_GRUPO_8
                 idCategoria);
 
             grdProductos.DataBind();
+            LimpiarFiltros();
         }
     }
 }

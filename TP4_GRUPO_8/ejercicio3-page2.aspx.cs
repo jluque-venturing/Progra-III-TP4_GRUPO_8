@@ -12,12 +12,27 @@ namespace TP4_GRUPO_8
         protected void Page_Load(object sender, EventArgs e)
         {
             string idTema = Request.QueryString["idTema"];
-            lblIdTema.Text = idTema;
 
-            DatosLibreria datos = new DatosLibreria();
 
-            grdLibros.DataSource = datos.TraerLibrosPorTema(Convert.ToInt32(idTema));
-            grdLibros.DataBind();
+            if (!string.IsNullOrEmpty(idTema))
+            {
+
+                lblIdTema.Text = "Tema seleccionado: " + idTema;
+
+                DatosLibreria datos = new DatosLibreria();
+                grdLibros.DataSource = datos.TraerLibrosPorTema(Convert.ToInt32(idTema));
+                grdLibros.DataBind();
+            }
+            else
+            {
+
+                lblIdTema.Text = "No se eligió ningún tema";
+                lblIdTema.ForeColor = System.Drawing.Color.Red; 
+
+
+            }
         }
     }
+
 }
+

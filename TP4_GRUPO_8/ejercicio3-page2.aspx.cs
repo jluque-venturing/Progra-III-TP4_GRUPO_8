@@ -22,6 +22,8 @@ namespace TP4_GRUPO_8
                 DatosLibreria datos = new DatosLibreria();
                 grdLibros.DataSource = datos.TraerLibrosPorTema(Convert.ToInt32(idTema));
                 grdLibros.DataBind();
+
+                HyperLink1.NavigateUrl = "ejercicio3-page1.aspx?IdTema=" + idTema;
             }
             else
             {

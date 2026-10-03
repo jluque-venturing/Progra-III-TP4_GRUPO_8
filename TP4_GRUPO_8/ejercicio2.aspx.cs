@@ -40,6 +40,7 @@ namespace TP4_GRUPO_8
         void LimpiarFiltros()
         {
             txtIdProducto.Text = string.Empty;
+            txtIdCategoria.Text = string.Empty;
             ddlOpProducto.SelectedIndex = 0;
             ddlOpCategoria.SelectedIndex = 0;
         }

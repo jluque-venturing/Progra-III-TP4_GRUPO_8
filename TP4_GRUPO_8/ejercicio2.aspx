@@ -123,7 +123,7 @@
                     <td class="auto-style8"></td>
                     <td class="auto-style9">&nbsp;<asp:Button ID="btnFiltrar" runat="server" Font-Bold="True" OnClick="btnFiltrar_Click" Text="Filtrar" Width="79px" />
 &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnQuitarFiltro" runat="server" Font-Bold="True" Text="Quitar filtro" Width="140px" />
+                        <asp:Button ID="btnQuitarFiltro" runat="server" Font-Bold="True" Text="Quitar filtro" Width="140px" OnClick="btnQuitarFiltro_Click" />
                     </td>
                     <td class="auto-style10"></td>
                     <td class="auto-style7"></td>

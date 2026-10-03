@@ -14,7 +14,7 @@ namespace TP4_GRUPO_8
             if (!IsPostBack)
             {
                 CargarOperadores();
-                LimpiarFiltros();
+                LimpiarTexto();
                 CargarGrilla();
             }
         }
@@ -29,6 +29,12 @@ namespace TP4_GRUPO_8
             ddlOpCategoria.Items.Add(new ListItem("Igual a:", "="));
             ddlOpCategoria.Items.Add(new ListItem("Mayor a:", ">"));
             ddlOpCategoria.Items.Add(new ListItem("Menor a:", "<"));
+        }
+        void LimpiarTexto ()
+        {
+           txtIdCategoria.Text = string.Empty;
+           txtIdProducto.Text = string.Empty;
+
         }
 
         void LimpiarFiltros()
@@ -72,7 +78,13 @@ namespace TP4_GRUPO_8
                 idCategoria);
 
             grdProductos.DataBind();
+            LimpiarTexto();
+        }
+
+        protected void btnQuitarFiltro_Click(object sender, EventArgs e)
+        {
             LimpiarFiltros();
+            CargarGrilla();
         }
     }
 }

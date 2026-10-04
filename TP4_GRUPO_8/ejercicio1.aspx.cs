@@ -20,83 +20,103 @@ namespace TP4_GRUPO_8
 
                 DataTable dt = datos.TraerProvincias();
 
-                ddlProvinciaInicio.DataSource = dt;
-                ddlProvinciaInicio.DataTextField = "NombreProvincia";
-                ddlProvinciaInicio.DataValueField = "IdProvincia";
-                ddlProvinciaInicio.DataBind();
+                CargarProvincias(ddlProvinciaInicio, dt);
+                CargarProvincias(ddlProvinciaFinal, dt);
 
-                PonerSeleccionar(ddlProvinciaInicio);
                 PonerSeleccionar(ddlLocalidadInicio);
-                PonerSeleccionar(ddlProvinciaFinal);
                 PonerSeleccionar(ddlLocalidadFinal);
             }
         }
 
         void PonerSeleccionar(DropDownList ddl)
         {
+            ddl.Items.Clear();
             ddl.Items.Add(new ListItem("--Seleccionar--", ""));
+        }
+
+        void CargarProvincias(DropDownList ddl, DataTable dt)
+        {
+            ddl.Items.Clear();
+            ddl.DataSource = dt;
+            ddl.DataTextField = "NombreProvincia";
+            ddl.DataValueField = "IdProvincia";
+            ddl.DataBind();
+
+            ddl.Items.Insert(0, new ListItem("--Seleccionar--", ""));
+            ddl.SelectedIndex = 0;
+        }
+
+        bool CargarProvinciasPreservando(DropDownList ddl, DataTable dt, string valorAPreservar)
+        {
+            CargarProvincias(ddl, dt);
+
+            ListItem item = ddl.Items.FindByValue(valorAPreservar);
+            if (item == null) return false;
+
+            ddl.SelectedValue = valorAPreservar;
+            return true;
         }
 
 
         protected void ddlProvinciaInicio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ddlLocalidadInicio.Items.Clear();
-            ddlProvinciaFinal.Items.Clear();
-            ddlLocalidadFinal.Items.Clear();
-
+            DatosViajes datos = new DatosViajes();
+            string provinciaFinalPrevia = ddlProvinciaFinal.SelectedValue;
+            bool seMantuvoProvinciaFinal;
 
             if (ddlProvinciaInicio.SelectedValue != "")
             {
-                DatosViajes datos = new DatosViajes();
                 int idProvinciaInicio = int.Parse(ddlProvinciaInicio.SelectedValue);
 
-                DataTable dtInicio = datos.TraerLocalidades(idProvinciaInicio);
-                ddlLocalidadInicio.DataSource = dtInicio;
+                DataTable dtLocalidades = datos.TraerLocalidades(idProvinciaInicio);
+                ddlLocalidadInicio.Items.Clear();
+                ddlLocalidadInicio.DataSource = dtLocalidades;
                 ddlLocalidadInicio.DataTextField = "NombreLocalidad";
                 ddlLocalidadInicio.DataValueField = "IdLocalidad";
                 ddlLocalidadInicio.DataBind();
 
                 DataTable dtProvincias = datos.TraerProvinciasExcepto(idProvinciaInicio);
-                ddlProvinciaFinal.DataSource = dtProvincias;
-                ddlProvinciaFinal.DataTextField = "NombreProvincia";
-                ddlProvinciaFinal.DataValueField = "IdProvincia";
-                ddlProvinciaFinal.DataBind();
-
-                PonerSeleccionar(ddlProvinciaFinal);
-                PonerSeleccionar(ddlLocalidadFinal);
+                seMantuvoProvinciaFinal = CargarProvinciasPreservando(ddlProvinciaFinal, dtProvincias, provinciaFinalPrevia);
             }
             else
             {
-
                 PonerSeleccionar(ddlLocalidadInicio);
-                PonerSeleccionar(ddlProvinciaFinal);
-                PonerSeleccionar(ddlLocalidadFinal);
+
+                DataTable dtProvincias = datos.TraerProvincias();
+                seMantuvoProvinciaFinal = CargarProvinciasPreservando(ddlProvinciaFinal, dtProvincias, provinciaFinalPrevia);
             }
+
+            if (!seMantuvoProvinciaFinal) PonerSeleccionar(ddlLocalidadFinal);
         }
         protected void ddlProvinciaFinal_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            ddlLocalidadFinal.Items.Clear();
+            DatosViajes datos = new DatosViajes();
+            string provinciaInicioPrevia = ddlProvinciaInicio.SelectedValue;
+            bool seMantuvoProvinciaInicio;
 
             if (ddlProvinciaFinal.SelectedValue != "")
             {
-                DatosViajes datos = new DatosViajes();
-
-
                 int idProvinciaFinal = int.Parse(ddlProvinciaFinal.SelectedValue);
 
-                DataTable dtFinal = datos.TraerLocalidades(idProvinciaFinal);
-
-                ddlLocalidadFinal.DataSource = dtFinal;
+                DataTable dtLocalidades = datos.TraerLocalidades(idProvinciaFinal);
+                ddlLocalidadFinal.Items.Clear();
+                ddlLocalidadFinal.DataSource = dtLocalidades;
                 ddlLocalidadFinal.DataTextField = "NombreLocalidad";
                 ddlLocalidadFinal.DataValueField = "IdLocalidad";
                 ddlLocalidadFinal.DataBind();
 
+                DataTable dtProvincias = datos.TraerProvinciasExcepto(idProvinciaFinal);
+                seMantuvoProvinciaInicio = CargarProvinciasPreservando(ddlProvinciaInicio, dtProvincias, provinciaInicioPrevia);
             }
             else
             {
                 PonerSeleccionar(ddlLocalidadFinal);
+
+                DataTable dtProvincias = datos.TraerProvincias();
+                seMantuvoProvinciaInicio = CargarProvinciasPreservando(ddlProvinciaInicio, dtProvincias, provinciaInicioPrevia);
             }
+
+            if (!seMantuvoProvinciaInicio) PonerSeleccionar(ddlLocalidadInicio);
         }
 
         protected void Button1_Click(object sender, EventArgs e)

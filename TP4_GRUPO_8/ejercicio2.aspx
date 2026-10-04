@@ -150,7 +150,7 @@
                     <td>&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:GridView ID="grdProductos" runat="server" AutoGenerateColumns="False">
+                        <asp:GridView ID="grdProductos" runat="server" AutoGenerateColumns="False" EmptyDataText="No se encontraron productos que coincidan con el filtro.">
                             <Columns>
                                 <asp:BoundField DataField="IdProducto" HeaderText="IdProducto" />
                                 <asp:BoundField DataField="NombreProducto" HeaderText="NombreProducto" />

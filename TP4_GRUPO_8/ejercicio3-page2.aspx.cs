@@ -13,27 +13,28 @@ namespace TP4_GRUPO_8
         {
             string idTema = Request.QueryString["idTema"];
 
-
             if (!string.IsNullOrEmpty(idTema))
             {
-
                 lblIdTema.Text = "Tema seleccionado: " + idTema;
 
                 DatosLibreria datos = new DatosLibreria();
+
                 grdLibros.DataSource = datos.TraerLibrosPorTema(Convert.ToInt32(idTema));
                 grdLibros.DataBind();
+
+               
+                lblCantidadLibros.Text = "Cantidad de libros encontrados: " + grdLibros.Rows.Count.ToString();
 
                 HyperLink1.NavigateUrl = "ejercicio3-page1.aspx?IdTema=" + idTema;
             }
             else
             {
-
                 lblIdTema.Text = "No se eligió ningún tema";
-                lblIdTema.ForeColor = System.Drawing.Color.Red; 
-
-
+                lblIdTema.ForeColor = System.Drawing.Color.Red;
+                lblCantidadLibros.Text = "";
             }
         }
+
     }
 
 }

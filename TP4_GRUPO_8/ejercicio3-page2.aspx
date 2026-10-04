@@ -45,6 +45,9 @@
                     <td class="auto-style6">
                         <h3><b>Listado de libros:</b></h3>
                         <asp:Label ID="lblIdTema" runat="server"></asp:Label>
+                        <br />
+                        <asp:Label ID="lblCantidadLibros" runat="server" Font-Bold="True"></asp:Label>
+                        </td>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -53,7 +56,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style6">
-                        <asp:GridView ID="grdLibros" runat="server" AutoGenerateColumns="False">
+                        <asp:GridView ID="grdLibros" runat="server" AutoGenerateColumns="False" EmptyDataText="No hay libros para ese tema">
                             
                             <Columns>
                                 <asp:BoundField DataField="IdLibro" HeaderText="IdLibro" />

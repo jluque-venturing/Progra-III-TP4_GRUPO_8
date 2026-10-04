@@ -41,5 +41,10 @@ namespace TP4_GRUPO_8
         {
             Response.Redirect("ejercicio3-page2.aspx?idTema=" + ddlTemas.SelectedValue);
         }
+
+        protected void ddlTemas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

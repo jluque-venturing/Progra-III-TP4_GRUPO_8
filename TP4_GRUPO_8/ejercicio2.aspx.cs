@@ -54,6 +54,13 @@ namespace TP4_GRUPO_8
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            if (txtIdProducto.Text == "" && txtIdCategoria.Text == "")
+            {
+                LimpiarFiltros();
+                CargarGrilla();
+                return; 
+            }
+
             int idProducto = 0;
             int idCategoria = 0;
 

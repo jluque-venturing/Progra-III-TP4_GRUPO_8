@@ -20,12 +20,31 @@ namespace TP4_GRUPO_8
                 ddlTemas.DataTextField = "Tema";
                 ddlTemas.DataValueField = "IdTema";
                 ddlTemas.DataBind();
+
+                string IdTema = Request.QueryString["IdTema"];
+
+                if (!string.IsNullOrEmpty(IdTema))
+                {
+                    ListItem item = ddlTemas.Items.FindByValue(IdTema);
+
+                    if (item != null)
+                    {
+
+                        ddlTemas.SelectedValue = IdTema;
+
+                    }
+                }
             }
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             Response.Redirect("ejercicio3-page2.aspx?idTema=" + ddlTemas.SelectedValue);
+        }
+
+        protected void ddlTemas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

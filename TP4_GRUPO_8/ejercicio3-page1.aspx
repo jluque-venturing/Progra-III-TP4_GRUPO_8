@@ -34,7 +34,7 @@
                         <asp:Label ID="Label1" runat="server" Text="Seleccionar Tema:"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlTemas" runat="server" Width="219px">
+                        <asp:DropDownList ID="ddlTemas" runat="server" Width="219px" OnSelectedIndexChanged="ddlTemas_SelectedIndexChanged" style="height: 22px">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>

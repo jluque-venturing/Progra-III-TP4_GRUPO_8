@@ -14,7 +14,7 @@ namespace TP4_GRUPO_8
             if (!IsPostBack)
             {
                 CargarOperadores();
-                LimpiarFiltros();
+                LimpiarTexto();
                 CargarGrilla();
             }
         }
@@ -30,10 +30,17 @@ namespace TP4_GRUPO_8
             ddlOpCategoria.Items.Add(new ListItem("Mayor a:", ">"));
             ddlOpCategoria.Items.Add(new ListItem("Menor a:", "<"));
         }
+        void LimpiarTexto ()
+        {
+           txtIdCategoria.Text = string.Empty;
+           txtIdProducto.Text = string.Empty;
+
+        }
 
         void LimpiarFiltros()
         {
             txtIdProducto.Text = string.Empty;
+            txtIdCategoria.Text = string.Empty;
             ddlOpProducto.SelectedIndex = 0;
             ddlOpCategoria.SelectedIndex = 0;
         }
@@ -47,6 +54,13 @@ namespace TP4_GRUPO_8
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            if (txtIdProducto.Text == "" && txtIdCategoria.Text == "")
+            {
+                LimpiarFiltros();
+                CargarGrilla();
+                return; 
+            }
+
             int idProducto = 0;
             int idCategoria = 0;
 
@@ -72,6 +86,13 @@ namespace TP4_GRUPO_8
                 idCategoria);
 
             grdProductos.DataBind();
+            LimpiarTexto();
+        }
+
+        protected void btnQuitarFiltro_Click(object sender, EventArgs e)
+        {
+            LimpiarFiltros();
+            CargarGrilla();
         }
     }
 }
